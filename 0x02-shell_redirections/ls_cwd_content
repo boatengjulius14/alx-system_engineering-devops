@@ -1,0 +1,13 @@
+total 0
+drwxr-xr-x 1 julius14 julius14 4096 Dec  6 19:19 .
+drwxr-xr-x 1 julius14 julius14 4096 Dec  6 16:41 ..
+-rwxr--r-- 1 julius14 julius14   32 Dec  6 16:28 0-hello_world
+-rwxr--r-- 1 julius14 julius14   30 Dec  6 16:40 1-confused_smiley
+-rwxr--r-- 1 julius14 julius14   28 Dec  6 16:47 2-hellofile
+-rwxr--r-- 1 julius14 julius14   39 Dec  6 17:00 3-twofiles
+-rwxr--r-- 1 julius14 julius14   29 Dec  6 17:03 4-lastlines
+-rwxr--r-- 1 julius14 julius14   29 Dec  6 17:05 5-firstlines
+-rwxr--r-- 1 julius14 julius14   38 Dec  6 17:12 6-third_line
+-rwxr--r-- 1 julius14 julius14   36 Dec  6 19:19 8-cwd_state
+-rw-r--r-- 1 julius14 julius14   31 Dec  6 16:27 README.md
+-rw-r--r-- 1 julius14 julius14    0 Dec  6 19:19 ls_cwd_content
