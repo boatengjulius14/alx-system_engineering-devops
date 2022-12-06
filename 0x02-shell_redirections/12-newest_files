@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -tl | grep '^-' | head -10
