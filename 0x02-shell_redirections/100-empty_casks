@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -size -1M | cut -b 3-
+find -empty | cut -b 3-
