@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -aRl | cut -b -1 | grep d | wc -l
+find . -type d -not -name '.' | wc -l
