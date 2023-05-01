@@ -4,7 +4,7 @@
 
 var=1
 
-until [ $var -eq 11 ]
+while [ $var -le 10 ]
 do
     echo "Best School"
     if [ $var -eq 9 ]
