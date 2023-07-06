@@ -1,25 +1,12 @@
 #!/usr/bin/env bash
+# detects what's keeping your Ubuntu container's Nginx installation
+# from listening on port 80.
 
-# Install curl if not already installed
-if ! command -v curl >/dev/null 2>&1; then
-    apt-get update
-    apt-get -y install curl
-fi
-
-# Check if Nginx is installed
-if ! command -v nginx >/dev/null 2>&1; then
-    apt-get update
-    apt-get -y install nginx
-fi
-
-# Update Nginx configuration
-sed -i 's/8080/80/g' /etc/nginx/sites-available/default
-
-# Remove old symbolic links in sites-enabled
-rm -f /etc/nginx/sites-enabled/*
+# Remove the existing symbolic link in sites-enabled
+sudo rm -f /etc/nginx/sites-enabled/default
 
 # Create a new symbolic link for the default site
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # Restart Nginx
-service nginx restart
+sudo service nginx restart
