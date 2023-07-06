@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # shorten code in 0-nginx_likes_port_80
-./0-nginx_likes_port_80
-echo "" > /var/run/nginx.pid
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
 echo "" > /run/nginx.pid
