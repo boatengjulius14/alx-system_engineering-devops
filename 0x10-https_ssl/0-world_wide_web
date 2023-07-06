@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
-# print out subdomain info
+# prints out subdomains info of websites
 
-func1 () {
-    subs="${2:-www lb-01 web-01 web-02}"
-    for bus in $subs; do
-        dig "$bus.$1" | awk '!/;/ && /[[:blank:]]/ { print "The subdomain", bus, "is a", $4, "record and points to", $5 }' 
+display_subdomain_info() {
+    if [ "$#" == 1 ]; then
+        domain=$1
+        subdomains=("www" "lb-01" "web-01" "web-02")
+    elif [ "$#" == 2 ]; then
+        domain=$1
+        subdomains=("$2")
+    fi
+
+    for subdomain in "${subdomains[@]}"; do
+        line=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+        echo "$subdomain $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
     done
 }
 
 # Main script
-if [ "$#" -eq 1 ]; then
-    func1 "$1"
-else
-    func1 "$1" "$2"
+if [ "$#" -eq 1 ] || [ "$#" -eq 2 ]; then
+    display_subdomain_info "$@"
 fi
