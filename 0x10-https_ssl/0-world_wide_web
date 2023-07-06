@@ -7,8 +7,14 @@ display_subdomain_info() {
 }
 
 # Main script
-subdomains=("www" "lb-01" "web-01" "web-02")
-
-for subdomain in "${subdomains[@]}"; do
-    display_subdomain_info "$1" "$subdomain"
-done
+if [ "$#" == 1 ]
+then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for subdomain in "${subdomains[@]}";
+    do
+        display_subdomain_info "$1" "$subdomain"
+    done
+elif [ "$#" == 2 ]
+then
+    display_subdomain_info "$1" "$2"
+fi
