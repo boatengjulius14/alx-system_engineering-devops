@@ -8,5 +8,5 @@ sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 # Restart Nginx service
 sudo service nginx restart
 
-# Clear the contents of the nginx.pid file
-sudo echo "" > /run/nginx.pid
+# Clear the contents of the nginx.pid file using sudo and tee
+sudo sh -c 'echo "" | tee /run/nginx.pid > /dev/null'
