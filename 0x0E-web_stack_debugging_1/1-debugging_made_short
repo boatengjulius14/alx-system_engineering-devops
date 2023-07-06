@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Configure Nginx to run and listen on port 80
+
+# Update Nginx configuration to replace all occurrences of "8080" with "80"
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+
+# Restart Nginx service
+sudo service nginx restart
+
+# Clear the contents of the nginx.pid file
+sudo echo "" > /run/nginx.pid
