@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install nginx and configures a server to return 'Hello World!'
+# +following a GET request
+
+apt-get -y update
+apt-get -y install nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html >/dev/null
+
+service nginx start
