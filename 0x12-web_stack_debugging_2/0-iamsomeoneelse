@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 #Takes user input and runs whoami on it
+
+if [ $# -ne 1 ]
+then
+    exit 1
+fi
+
 su "$1" -s /bin/bash -c 'whoami'
